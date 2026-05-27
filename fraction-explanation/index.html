@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Математика 5 класс: Обыкновенные дроби — визуальное объяснение</title>
+    <link rel="stylesheet" href="explain-style.css">
+</head>
+<body>
+    <div class="explanation-container">
+        <!-- шапка -->
+        <div class="hero">
+            <h1>🍕 ОБЫКНОВЕННЫЕ ДРОБИ 🍰</h1>
+            <p>5 класс • Визуальное объяснение</p>
+        </div>
+
+        <!-- КНОПКИ ПЕРЕХОДА НА ДРУГИЕ САЙТЫ -->
+        <div class="nav-links">
+            <a href="../fraction-game/index.html" class="nav-btn" target="_blank">🎮 Игра «Дробная пицца»</a>
+            <a href="../fraction-ray/index.html" class="nav-btn" target="_blank">📏 Числовой луч</a>
+        </div>
+
+        <!-- основное визуальное пояснение + анимация -->
+        <div class="visual-lesson">
+            <div class="pizza-animation-area">
+                <div class="pizza-card">
+                    <h2>🍕 Как разделить пиццу? → Дробь</h2>
+                    <div class="pizza-stage">
+                        <canvas id="pizzaCanvasExplain" width="260" height="260" style="width:260px; height:260px;"></canvas>
+                        <div class="fraction-display" id="fractionDisplay">
+                            <span class="fraction-big">
+                                <span id="animNumerator">3</span>
+                                <span class="fraction-line"></span>
+                                <span id="animDenominator">4</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pizza-controls">
+                        <label>🍴 Количество кусочков (знаменатель):
+                            <input type="range" id="denSlider" min="1" max="8" value="4" step="1">
+                            <span id="denValue">4</span>
+                        </label>
+                        <label>🧡 Закрашенных кусочков (числитель):
+                            <input type="range" id="numSlider" min="0" max="8" value="3" step="1">
+                            <span id="numValue">3</span>
+                        </label>
+                        <button id="animateBtn" class="animate-btn">✨ Анимация: разрезание → дробь ✨</button>
+                    </div>
+                    <div class="explain-text" id="liveExplain">
+                        👆 Передвигай ползунки! Пицца покажет, какая часть закрашена.<br>
+                        <strong>Дробь <span id="dynamicFraction">3/4</span> означает: целое разделили на 4 равные части и взяли 3 части.</strong>
+                    </div>
+                </div>
+
+                <div class="theory-card">
+                    <h2>📖 Что такое обыкновенная дробь?</h2>
+                    <div class="theory-content">
+                        <p><strong>Обыкновенная дробь</strong> — это число, показывающее <span class="highlight">часть от целого</span>.</p>
+                        <p>Записывают так: <span class="fraction-example">m</span> / <span class="fraction-example">n</span> , где черта — знак деления.</p>
+                        <ul class="theory-list">
+                            <li>🍩 <strong>Знаменатель</strong> (нижнее число) — на сколько равных частей разделили целое.</li>
+                            <li>🍫 <strong>Числитель</strong> (верхнее число) — сколько таких частей взяли.</li>
+                        </ul>
+                        <div class="example-box">
+                            ⭐ Пример: <span class="big-fraction">3</span><span class="fraction-line-inline">—</span><span class="big-fraction">4</span>  → пиццу разрезали на 4 куска и съели 3 куска.
+                        </div>
+                        <div class="tip">
+                            💡 Дробь можно представить как «числитель / знаменатель». Если числитель меньше знаменателя — это <strong>правильная дробь</strong> (меньше целого).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- дополнительный текстовый материал -->
+        <div class="extra-materials">
+            <div class="material-block">
+                <h3>🧁 Дроби вокруг нас</h3>
+                <p>Ты используешь дроби, когда делишь шоколадку, разрезаешь торт на дни рождения или говоришь «половина седьмого». Дроби помогают точно описывать части!</p>
+            </div>
+            <div class="material-block">
+                <h3>✏️ Как читать дроби?</h3>
+                <p>1/2 — одна вторая (половина)<br>1/3 — одна третья<br>3/4 — три четверти<br>5/8 — пять восьмых<br>Читай числитель, потом знаменатель в родительном падеже.</p>
+            </div>
+            <div class="material-block">
+                <h3>🎯 Главное запомнить</h3>
+                <p>Чем больше знаменатель, тем мельче части. Чем больше числитель, тем больше частей мы взяли!</p>
+            </div>
+        </div>
+
+        <footer class="explain-footer">
+            🧮 Математика — вкусная! Перетаскивай ползунки и смотри, как меняется дробь.
+        </footer>
+    </div>
+
+    <script src="explain-script.js"></script>
+</body>
+</html>

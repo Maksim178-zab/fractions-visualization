@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Игра: Обыкновенные дроби - Дробная пицца</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container" id="gameApp">
+    <div class="game-header">
+        <h1>🍕 ДРОБНАЯ ПИЦЦА 🍕</h1>
+        <div class="sub">Учим обыкновенные дроби!</div>
+    </div>
+
+    <!-- КНОПКИ ПЕРЕХОДА НА ДРУГИЕ САЙТЫ -->
+    <div class="nav-links">
+        <a href="../fraction-explanation/index.html" class="nav-btn" target="_blank">📖 Объяснение дробей</a>
+        <a href="../fraction-ray/index.html" class="nav-btn" target="_blank">📏 Числовой луч</a>
+    </div>
+
+    <div class="stats-panel">
+        <div class="score-box">
+            <span>🏆 Очки</span>
+            <span id="scoreDisplay">0</span>
+        </div>
+        <div class="question-counter">
+            <span>📋 Вопрос</span>
+            <span id="questionIdxDisplay">1</span><span> / <span id="totalQuestionsSpan">8</span></span>
+        </div>
+        <button class="reset-btn" id="resetGameBtn">🔄 Новая игра</button>
+    </div>
+
+    <div class="question-area">
+        <div class="question-text" id="questionText">
+            Какую часть пиццы закрашено?
+        </div>
+        <div class="fraction-pizza">
+            <div class="canvas-pizza">
+                <canvas id="pizzaCanvas" width="180" height="180"></canvas>
+            </div>
+            <div class="fraction-label">
+                <span>❓</span> = <span id="fractionHint">?</span>
+            </div>
+        </div>
+        <div class="options-grid" id="optionsContainer"></div>
+        <div class="message-area" id="messageBox">
+            👋 Нажми на правильную дробь!
+        </div>
+        <button class="next-btn" id="nextQuestionBtn" disabled>➡️ Следующий вопрос</button>
+    </div>
+    <footer>🍕 Смотри на пиццу — выбирай дробь! Каждый правильный ответ +10 очков.</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

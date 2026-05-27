@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математика 5 класс: Дроби на числовом луче</title>
+    <link rel="stylesheet" href="ray-style.css">
+</head>
+<body>
+    <div class="ray-container">
+        <!-- шапка -->
+        <div class="ray-header">
+            <h1>📏 ЧИСЛОВОЙ ЛУЧ И ДРОБИ 📐</h1>
+            <p>Как отметить дробь на луче? Смотри и учись!</p>
+        </div>
+
+        <!-- КНОПКИ ПЕРЕХОДА НА ДРУГИЕ САЙТЫ -->
+        <div class="nav-links">
+            <a href="../fraction-game/index.html" class="nav-btn" target="_blank">🍕 Игра «Дробная пицца»</a>
+            <a href="../fraction-explanation/index.html" class="nav-btn" target="_blank">🍰 Объяснение дробей</a>
+        </div>
+
+        <!-- главная визуализация -->
+        <div class="ray-viz">
+            <div class="ray-card">
+                <h2>📊 Числовой луч от 0 до 1</h2>
+                <p class="ray-desc">Каждая точка на луче — это дробь. Чем правее, тем больше число!</p>
+
+                <!-- canvas для луча -->
+                <canvas id="numberRayCanvas" width="700" height="200"></canvas>
+
+                <!-- элементы управления -->
+                <div class="ray-controls">
+                    <div class="control-group">
+                        <label>📉 Знаменатель (на сколько делим):</label>
+                        <input type="range" id="denRaySlider" min="2" max="12" value="4" step="1">
+                        <span id="denRayValue">4</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>🎯 Числитель (какую точку показываем):</label>
+                        <input type="range" id="numRaySlider" min="0" max="12" value="3" step="1">
+                        <span id="numRayValue">3</span>
+                    </div>
+
+                    <button id="showPointBtn" class="ray-btn">✨ Показать точку на луче ✨</button>
+                </div>
+
+                <!-- отображение текущей дроби -->
+                <div class="fraction-ray-box">
+                    <div class="fraction-ray-display">
+                        <span class="ray-fraction">
+                            <span id="rayNumerator">3</span>
+                            <span class="ray-line"></span>
+                            <span id="rayDenominator">4</span>
+                        </span>
+                        <span class="ray-equals"> = </span>
+                        <span id="rayDecimal">0.75</span>
+                    </div>
+                    <p id="rayExplanation" class="ray-explanation">
+                        📍 Отрезок от 0 до 1 разделили на <strong>4</strong> равные части.
+                        Отсчитали <strong>3</strong> части — это точка <strong>3/4</strong> (0.75).
+                    </p>
+                </div>
+            </div>
+
+            <!-- теория -->
+            <div class="theory-ray-card">
+                <h3>📖 Как отметить дробь на луче?</h3>
+                <div class="theory-ray-content">
+                    <p><strong>Правило:</strong></p>
+                    <ol class="ray-steps">
+                        <li>Начерти луч от 0 до 1.</li>
+                        <li>Раздели отрезок на столько равных частей, <br>сколько показывает <strong>знаменатель</strong>.</li>
+                        <li>Отсчитай столько частей от 0, сколько показывает <strong>числитель</strong>.</li>
+                        <li>Поставь точку — это и есть твоя дробь!</li>
+                    </ol>
+                    <div class="example-ray">
+                        ⭐ Например: <strong>3/4</strong><br>
+                        → Знаменатель 4 → делим на 4 части<br>
+                        → Числитель 3 → берём 3 части от 0<br>
+                        → Получаем точку между 0 и 1!
+                    </div>
+                    <div class="tip-ray">
+                        💡 <strong>Запомни:</strong> Чем больше числитель, тем правее точка!
+                        Чем больше знаменатель, тем мельче деления.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- дополнительные примеры -->
+        <div class="extra-ray-examples">
+            <h3>🎯 Попробуй отметить сам!</h3>
+            <div class="example-buttons">
+                <button data-num="1" data-den="2" class="example-ray-btn">1/2 (половина)</button>
+                <button data-num="1" data-den="4" class="example-ray-btn">1/4 (четверть)</button>
+                <button data-num="3" data-den="4" class="example-ray-btn">3/4 (три четверти)</button>
+                <button data-num="1" data-den="3" class="example-ray-btn">1/3 (треть)</button>
+                <button data-num="2" data-den="3" class="example-ray-btn">2/3 (две трети)</button>
+                <button data-num="2" data-den="5" class="example-ray-btn">2/5</button>
+                <button data-num="5" data-den="8" class="example-ray-btn">5/8</button>
+                <button data-num="7" data-den="10" class="example-ray-btn">7/10</button>
+            </div>
+        </div>
+
+        <footer class="ray-footer">
+            📐 Дробь — это точка на числовом луче! Передвигай ползунки и наблюдай.
+        </footer>
+    </div>
+
+    <script src="ray-script.js"></script>
+</body>
+</html>

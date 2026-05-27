@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #2c3e66 0%, #1a2538 100%);
+    font-family: 'Segoe UI', 'Comic Neue', 'Comic Sans MS', 'Nunito', sans-serif;
+    padding: 30px 20px;
+    min-height: 100vh;
+}
+
+.ray-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8f9fc;
+    border-radius: 64px;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+    padding: 30px 35px 45px;
+}
+
+/* КНОПКИ НАВИГАЦИИ МЕЖДУ САЙТАМИ */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: #ffaa44;
+    color: #3d2b1a;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.1s linear;
+    box-shadow: 0 4px 0 #b4621a;
+    display: inline-block;
+}
+
+.nav-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b4621a;
+}
+
+/* шапка */
+.ray-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ray-header h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.ray-header p {
+    font-size: 1.2rem;
+    color: #2c5a7a;
+    background: #e8f0fe;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 40px;
+}
+
+/* основная сетка */
+.ray-viz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.ray-card {
+    flex: 2;
+    min-width: 400px;
+    background: white;
+    border-radius: 48px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.theory-ray-card {
+    flex: 1;
+    min-width: 260px;
+    background: #eef3fc;
+    border-radius: 48px;
+    padding: 25px;
+}
+
+.ray-card h2, .theory-ray-card h3 {
+    color: #2c5a7a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ray-desc {
+    text-align: center;
+    color: #5a6e7a;
+    margin-bottom: 20px;
+}
+
+/* canvas для луча */
+canvas {
+    display: block;
+    margin: 0 auto;
+    background: #fffef7;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+}
+
+/* элементы управления */
+.ray-controls {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.control-group label {
+    font-weight: bold;
+    color: #2c5a7a;
+    min-width: 180px;
+}
+
+input[type="range"] {
+    flex: 1;
+    min-width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #cce0f0;
+}
+
+.control-group span {
+    background: #4a90e2;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+.ray-btn {
+    background: #4a90e2;
+    border: none;
+    padding: 12px;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.07s linear;
+    box-shadow: 0 5px 0 #2c5a7a;
+}
+
+.ray-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #2c5a7a;
+}
+
+/* отображение дроби */
+.fraction-ray-box {
+    margin-top: 25px;
+    background: #f0f5fa;
+    border-radius: 36px;
+    padding: 20px;
+    text-align: center;
+}
+
+.fraction-ray-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.ray-fraction {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2c5a7a;
+}
+
+.ray-line {
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #2c5a7a;
+    margin: 5px 0;
+}
+
+.ray-equals {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5a6e7a;
+}
+
+#rayDecimal {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.ray-explanation {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #2c5a7a;
+    background: white;
+    padding: 12px;
+    border-radius: 28px;
+}
+
+/* теория */
+.theory-ray-content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.ray-steps {
+    margin: 15px 0 15px 25px;
+}
+
+.ray-steps li {
+    margin: 8px 0;
+}
+
+.example-ray {
+    background: #ffe0a8;
+    border-radius: 28px;
+    padding: 12px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.tip-ray {
+    background: #d4e4f5;
+    border-radius: 28px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+/* дополнительные примеры */
+.extra-ray-examples {
+    background: #eef3fc;
+    border-radius: 48px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.extra-ray-examples h3 {
+    text-align: center;
+    color: #2c5a7a;
+    margin-bottom: 20px;
+}
+
+.example-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.example-ray-btn {
+    background: #ffaa44;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.07s linear;
+    font-family: inherit;
+}
+
+.example-ray-btn:active {
+    transform: scale(0.96);
+}
+
+.ray-footer {
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 2px dashed #cce0f0;
+    color: #5a6e7a;
+}
+
+@media (max-width: 800px) {
+    .ray-container {
+        padding: 20px;
+    }
+    .ray-card {
+        min-width: auto;
+    }
+    .ray-fraction {
+        font-size: 1.8rem;
+    }
+    .ray-header h1 {
+        font-size: 1.8rem;
+    }
+    .nav-btn {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+}
